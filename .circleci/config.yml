@@ -11,7 +11,7 @@ defaults: &defaults
 
 jobs:
   build:
-    <<: *defaults
+    << : *defaults
     steps:
       - checkout
       - run: npm i
@@ -22,7 +22,7 @@ jobs:
       - run: npm run lint
 
   test:
-    <<: *defaults
+    << : *defaults
     steps:
       - checkout
       - restore_cache:
@@ -31,7 +31,7 @@ jobs:
       - run: npm run test
 
   analyze:
-    <<: *defaults
+    << : *defaults
     steps:
       - checkout
       - restore_cache:
